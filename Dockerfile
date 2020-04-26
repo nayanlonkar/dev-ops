@@ -5,11 +5,9 @@ FROM node
 LABEL MAINTAINER="Nayan"
 
 RUN apt-get update && apt-get upgrade -y
-RUN apt-get install mysql-server -y
-RUN mkdir myApp && cd myApp
-RUN npm init -y
-RUN npm install --save express
-RUN npm install --save mysql
+RUN apt-get install mysql-server git -y
+RUN git clone https://github.com/nayanlonkar/dev-ops
+RUN cd myApp && npm install 
 
 
 EXPOSE 8080/tcp
