@@ -85,4 +85,4 @@ app.delete("/user/:id", (req, res) => {
   });
 });
 
-app.listen(8080);
+app.listen(8080, () => console.log(">>> App is running on port 8080..."));
