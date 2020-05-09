@@ -1,28 +1,9 @@
 const express = require("express");
 const cors = require("cors");
+const connection = require("./db_connection"); // database connection
 
 const app = express();
 app.use(express.json());
-
-/************************DATABASE CONNECTIVITY*************************/
-const mysql = require("mysql");
-
-var connection = mysql.createConnection({
-  host: "localhost",
-  user: "nayan",
-  password: "nayan",
-  database: "crud_db",
-});
-
-connection.connect((err) => {
-  if (err) {
-    console.log("error connecting to database...");
-    return;
-  }
-  console.log("connected as id " + connection.threadId);
-});
-
-/**************************************************************************/
 
 app.get("/", (req, res) => {
   res.send("<h1>Hi There</h1?");
@@ -30,11 +11,24 @@ app.get("/", (req, res) => {
 
 // get all
 app.get("/user", (req, res) => {
+  if (
+    Object.keys(req.query)[0] != "id" &&
+    Object.keys(req.query)[0] != "name"
+  ) {
+    res.status(400);
+    res.send("bad request");
+  }
+  // if (Object.keys(req.query)[0] !== 'id' || Object.keys(req.query)[0] !== 'name'){
+  //   res.status(400);
+  //   res.json({error: "bad request"})
+  // }
   const id = req.query.id;
   const name = req.query.name;
+
   if (id === undefined && name === undefined) {
     res.status(400);
     res.json({ error: "pass the parameter either id or name" });
+    res.send();
   }
 
   if (name === undefined) {
@@ -74,21 +68,6 @@ app.get("/user", (req, res) => {
       }
     );
   }
-});
-
-// get by id
-app.get("/user/:id", (req, res) => {
-  const id = String(req.params.id);
-  const temp = "SELECT * FROM user_detail WHERE id =" + req.params.id;
-  connection.query(
-    "SELECT * FROM user_detail WHERE id = ?",
-    [id],
-    (err, result, fields) => {
-      if (err) console.log(err);
-      console.log(">>> get by id call...");
-      res.json(result);
-    }
-  );
 });
 
 // post method
