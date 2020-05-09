@@ -1,18 +1,54 @@
 {
-	"id": "ba734e3f-995a-40e6-9229-0d222b897186",
+	"id": "a8b1e11d-ce17-41b4-8e06-d5bf9c1ec4af",
 	"name": "CRUD",
-	"timestamp": "2020-04-28T11:49:47.013Z",
-	"collection_id": "a73b1883-3501-4732-978f-981238154b75",
+	"timestamp": "2020-05-09T10:31:57.293Z",
+	"collection_id": "e8ab47ba-28e3-4fe4-9105-26f34f93b445",
 	"folder_id": 0,
 	"environment_id": "0",
 	"totalPass": 0,
 	"totalFail": 0,
 	"results": [
 		{
-			"id": "4a4a5c94-1cac-47d6-a21d-b44dc2b42d19",
-			"name": "http://localhost:8080/user",
+			"id": "b2948fd9-eccf-42c1-ad83-99c2a720a700",
+			"name": "Get By Id",
+			"url": "http://localhost:8080/user?id=1",
+			"time": 15,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				15
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "07549cfc-c8a8-483a-a072-d8ea5c2ed0f9",
+			"name": "Get By name",
+			"url": "http://localhost:8080/user?name='Jane Doe'",
+			"time": 7,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				7
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e03f6cc7-9e69-49c2-84b6-8186ce3ee65c",
+			"name": "Post Request",
 			"url": "http://localhost:8080/user",
-			"time": 18,
+			"time": 28,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -20,17 +56,17 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				18
+				28
 			],
 			"allTests": [
 				{}
 			]
 		},
 		{
-			"id": "c93580d9-026c-49b5-a85d-485a6c5375ea",
-			"name": "http://localhost:8080/user",
-			"url": "http://localhost:8080/user/3",
-			"time": 6,
+			"id": "67b2a235-aad5-44b8-ad05-d48b95fb18eb",
+			"name": "PUT request",
+			"url": "http://localhost:8080/user?id=1",
+			"time": 30,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -38,17 +74,17 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				6
+				30
 			],
 			"allTests": [
 				{}
 			]
 		},
 		{
-			"id": "29c5b49d-79d4-4002-8b2c-f3ad388cd52a",
-			"name": "http://localhost:8080/user",
-			"url": "http://localhost:8080/user",
-			"time": 34,
+			"id": "1a3dbe15-a87e-4056-9177-f540db5b8776",
+			"name": "DELETE request",
+			"url": "http://localhost:8080/user?id=1",
+			"time": 29,
 			"responseCode": {
 				"code": 200,
 				"name": "OK"
@@ -56,43 +92,7 @@
 			"tests": {},
 			"testPassFailCounts": {},
 			"times": [
-				34
-			],
-			"allTests": [
-				{}
-			]
-		},
-		{
-			"id": "0be2fb9b-e514-4bd6-8a79-906680c09e25",
-			"name": "http://localhost:8080/user",
-			"url": "http://localhost:8080/user/11",
-			"time": 23,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {},
-			"testPassFailCounts": {},
-			"times": [
-				23
-			],
-			"allTests": [
-				{}
-			]
-		},
-		{
-			"id": "3a1765a4-dc5f-465a-b721-639664ea3d56",
-			"name": "http://localhost:8080/user",
-			"url": "http://localhost:8080/user/11",
-			"time": 24,
-			"responseCode": {
-				"code": 200,
-				"name": "OK"
-			},
-			"tests": {},
-			"testPassFailCounts": {},
-			"times": [
-				24
+				29
 			],
 			"allTests": [
 				{}
@@ -100,27 +100,27 @@
 		}
 	],
 	"count": 1,
-	"totalTime": 105,
+	"totalTime": 109,
 	"collection": {
 		"requests": [
 			{
-				"id": "4a4a5c94-1cac-47d6-a21d-b44dc2b42d19",
+				"id": "b2948fd9-eccf-42c1-ad83-99c2a720a700",
 				"method": "GET"
 			},
 			{
-				"id": "c93580d9-026c-49b5-a85d-485a6c5375ea",
+				"id": "07549cfc-c8a8-483a-a072-d8ea5c2ed0f9",
 				"method": "GET"
 			},
 			{
-				"id": "29c5b49d-79d4-4002-8b2c-f3ad388cd52a",
+				"id": "e03f6cc7-9e69-49c2-84b6-8186ce3ee65c",
 				"method": "POST"
 			},
 			{
-				"id": "0be2fb9b-e514-4bd6-8a79-906680c09e25",
+				"id": "67b2a235-aad5-44b8-ad05-d48b95fb18eb",
 				"method": "PUT"
 			},
 			{
-				"id": "3a1765a4-dc5f-465a-b721-639664ea3d56",
+				"id": "1a3dbe15-a87e-4056-9177-f540db5b8776",
 				"method": "DELETE"
 			}
 		]
