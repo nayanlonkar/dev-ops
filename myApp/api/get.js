@@ -7,8 +7,7 @@ router.get("/", (req, res) => {
     Object.keys(req.query)[0] != "id" &&
     Object.keys(req.query)[0] != "name"
   ) {
-    res.status(400);
-    res.send({ error: "bad request" });
+    res.status(400).send({ error: "bad request" });
   }
 
   const id = req.query.id;
@@ -25,8 +24,7 @@ router.get("/", (req, res) => {
       "SELECT * FROM user_detail WHERE id =" + id,
       (err, result, fields) => {
         if (err) {
-          res.status(400);
-          res.send({ error: "bad request" });
+          res.status(400).send({ error: "bad request" });
         } else {
           console.log(">>> get call...");
           if (result[0] === undefined) {
@@ -44,8 +42,7 @@ router.get("/", (req, res) => {
       "SELECT * FROM user_detail WHERE name =" + name,
       (err, result, fields) => {
         if (err) {
-          res.status(400);
-          res.send({ error: "bad request" });
+          res.status(400).send({ error: "bad request" });
         } else {
           console.log(">>> get call...");
           if (result[0] === undefined) {
